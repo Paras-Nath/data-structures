@@ -11,7 +11,7 @@ public class ReverseKListElements {
         System.out.println("\nbefore reverse");
         ListNode.print(head);
 
-        head = ReverseKListElements.reverseKListElements(head, 3, 3);
+        head = ReverseKListElements.reverseKListElements(head, 2, 2);
 
         System.out.println("\nafter reverse");
         ListNode.print(head);
@@ -27,6 +27,7 @@ public class ReverseKListElements {
         }
 
         ListNode t_head = reverseKListElements(head.next, --n, k);
+        if(n==1) { head.next = t_head; ListNode.print(head); return head;}
         head.next = null;
         ListNode t_tail = t_head;
         while (t_tail.next != null) {
